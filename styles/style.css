@@ -423,3 +423,23 @@ section {
 .btn-white:hover span {
   color: var(--pink);
 }
+
+/* footer  */
+footer {
+  padding: 120px;
+  background: #0b0223;
+}
+footer .logo {
+  margin: 0 auto;
+  text-align: center;
+  font-size: 45px;
+  font-weight: 700;
+  color: #fff;
+}
+footer .logo span{
+    color: var(--pink);
+}
+footer .logo img {
+  width: 80px;
+  margin-right: 20px;
+}
