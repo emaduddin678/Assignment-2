@@ -15,6 +15,7 @@ img {
   --black: #0b0223;
   --dark: #534c64;
 }
+
 .title {
   color: var(--black);
   font-size: 48px;
@@ -38,9 +39,19 @@ section {
   padding: 21px 40px;
   align-items: flex-start;
   border-radius: 48px;
+  font-weight: 700;
   border: none;
   color: white;
   background: var(--linear, linear-gradient(90deg, #ff42a5 0%, #ff42a5 100%));
+  outline: 1px solid transparent;
+  transition: all linear .3s;
+}
+.button-pink:hover{
+  cursor: pointer;
+  transition: all linear .3s;
+  background: transparent;
+  color: var(--pink);
+  outline: 1px solid var(--pink);
 }
 
 /* navbar css start  */
@@ -115,6 +126,48 @@ section {
     rgba(255, 66, 165, 0.03) 100%
   );
 }
+/* .banner_btn_sm {
+  display: none;
+} */
+
+
+  .banner_btn_sm {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-start;
+  }
+  .banner_btn_sm .signin_btn {
+    padding: 1rem 2rem;
+    margin-right: 1rem;
+    background-color: #ff42a5;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 25px;
+    border: none;
+  }
+  .banner_btn_sm .rogue_btn {
+    padding: 1rem 2rem;
+    background-color: #4ec5f7;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 28px;
+    border: none;
+    margin-left: 20px;
+    outline: 1px solid transparent;
+  }
+  
+  .rogue_btn:hover{
+    outline: 1px solid #4ec5f7;
+    background: transparent;
+    color: #4ec5f7;
+    cursor: pointer;
+
+  }
+
 .banner > div {
   flex: 1;
 }
@@ -195,12 +248,22 @@ section {
 }
 .all-video {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: stretch;
+  align-items: stretch;
   gap: 14px;
 }
+  .video{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
 .all-video .video {
   flex: 1;
+  /* position: relative; */
+}
+.sub-video{
   position: relative;
 }
 .video-text {
@@ -212,27 +275,36 @@ section {
 .overlay {
   position: absolute;
   top: 0;
-  bottom: 0;
   left: 0;
   right: 0;
-  border-radius: 7px;
-  /* height: 100%;
-  width: 100%; */
+  /* bottom: 97px; */
+  bottom: 0;
+  border-radius: 15px;
+  height: 98%;
+  /* height: 100%; */
+  /* width: 100%;  */
   opacity: 0;
   transition: 0.5s ease;
   background-color: var(--dark);
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 .overlay img {
   width: 30px !important;
 }
-.video img {
+.sub-video > img {
   width: 100%;
+  height: 100%;
   cursor: pointer;
   transition: 0.3s;
 }
+.overlay p{
+  margin-top: 10px;
+  color: #f948b2;
+}
+
 .video:hover .overlay {
   opacity: 0.6;
 }
@@ -424,7 +496,7 @@ section {
   color: var(--pink);
 }
 
-/* footer  */
+/*==================== footer  ==================================*/
 footer {
   padding: 120px;
   background: #0b0223;
@@ -436,10 +508,336 @@ footer .logo {
   font-weight: 700;
   color: #fff;
 }
-footer .logo span{
-    color: var(--pink);
+footer .logo span {
+  color: var(--pink);
 }
 footer .logo img {
   width: 80px;
   margin-right: 20px;
+}
+footer .aboutText {
+  display: flex;
+  justify-content: center;
+  color: #ffffff;
+  padding-top: 1.8rem;
+  padding-bottom: 1.8rem;
+}
+footer .aboutText a {
+  text-decoration: none;
+  color: #fff;
+  padding: 1rem;
+  font-size: 18px;
+  font-weight: 600;
+}
+footer .aboutText a:hover {
+  color: #ff42a5;
+}
+
+footer .footerSocialMediaLink {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 1rem;
+}
+
+footer .footerSocialMediaLink a {
+  text-decoration: none;
+  padding: 1rem;
+  color: #ffffff;
+  font-size: 40px;
+}
+footer .footerSocialMediaLink a:hover {
+  color: #ff42a5;
+}
+footer .terms {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+footer .terms a {
+  text-decoration: none;
+  color: #fff;
+  padding: 10px;
+  font-size: 16px;
+  opacity: 60%;
+}
+footer .terms a:hover {
+  color: #ff42a5;
+}
+
+footer .copyright {
+  text-align: center;
+  color: #fff;
+  opacity: 60%;
+  padding: 10px;
+}
+
+/* ============ end footer ============== */
+
+/* ================ media query for small device ======== */
+@media (max-width: 768px) {
+  .title {
+    text-align: center;
+  }
+
+  .navbar {
+    flex-direction: column;
+    /* justify-content: center; */
+    padding: 0;
+  }
+  .navbrand {
+    margin-right: 11rem;
+  }
+  .nav_list_sm {
+    flex-direction: column;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  .nav-list {
+    padding-bottom: 1rem;
+  }
+  .nav-social {
+    margin-top: 2rem;
+  }
+
+  /* ======== banner ====== */
+
+  .banner {
+    flex-direction: column-reverse;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  .banner-text .title {
+    /* margin-top: 3rem; */
+    padding-top: 5rem;
+  }
+
+  .banner_btn_sm {
+    display: block;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+  }
+  .banner_btn_sm .signin_btn {
+    padding: 1rem 2rem;
+    margin-right: 1rem;
+    background-color: #ff42a5;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 25px;
+    border: none;
+  }
+  .banner_btn_sm .rogue_btn {
+    padding: 1rem 2rem;
+    background-color: #4ec5f7;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 28px;
+    border: none;
+  }
+
+  /* ============ gamer section ========= */
+  .gamer {
+    flex-direction: column;
+    background: #fff;
+    justify-content: center;
+  }
+  .gamer > div {
+    margin: 0;
+    text-align: center;
+  }
+  .gamer-text p {
+    margin: 0;
+    width: 100%;
+    margin: 20px 0;
+  }
+
+  /* stream section  */
+  .stream .title {
+    font-size: 28px;
+  }
+
+  .all-video {
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+  }
+
+  .video img {
+    width: 500px;
+  }
+  .video-text {
+    width: 500px;
+    text-align: center;
+  }
+  .overlay {
+    /* bottom: 38px; */
+    height: 98.6%;
+    border: 16px;
+  }
+
+  /* instant play? */
+  .instant-play {
+    flex-direction: column;
+  }
+  .instant-text {
+    padding: 0;
+  }
+  .instant-text .title,
+  .instant-text p {
+    margin-bottom: 50px;
+    text-align: center;
+  }
+  .instant-play2 {
+    flex-direction: column-reverse;
+    padding-bottom: 100px;
+  }
+  .instant-text2 {
+    padding: 0;
+  }
+  .instant-text2 .title,
+  .instant-text2 p {
+    margin-top: 50px !important;
+    margin-bottom: 50px !important;
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+  }
+  /* career  */
+  .career {
+    flex-direction: column;
+  }
+  .left-career .title {
+    text-align: left;
+  }
+
+  footer .aboutText {
+    flex-wrap: wrap;
+  }
+  footer .aboutText a {
+    font-size: 14px;
+  }
+
+  footer .copyright {
+    padding-top: 60px;
+  }
+  .video{
+    margin-bottom: 2rem;
+  }
+  .overlay img{
+    width: 50px !important;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  section {
+    padding: 0 20px !important;
+  }
+  /* stream section  */
+  .stream {
+    padding: 50px 20px !important;
+  }
+  .stream .title {
+    font-size: 26px;
+  }
+   .overlay {
+    bottom: 68px;
+    border: 16px;
+  }
+  .video {
+    margin: 0 auto;
+  }
+  .sub-video img {
+    width: 100%;
+  }
+  .video-text {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* instant play? */
+  .instant-cart img:first-child {
+    width: 80%;
+  }
+  .instant-cart .small-img {
+    left: 0px;
+    bottom: -60px;
+  }
+  .instant-text .title {
+    font-size: 26px;
+  }
+  .instant-text2 .title {
+    font-size: 26px;
+  }
+
+  .instant-text2 p {
+    margin: 0 auto !important;
+    margin-bottom: 50px !important;
+  }
+
+  .instant-play,
+  .instant-play2 {
+    padding: 0 20px;
+  }
+  .left-career{
+    padding: 50px 0;
+  }
+  .right-career{
+    padding-bottom: 50px ;
+  }
+  .all-button{
+    padding: 50px 0 !important;
+  }
+  footer{
+    padding: 50px 20px;
+  }
+  footer .terms a{
+    padding: 0;
+  }
+  .video{
+    margin-bottom: 2rem;
+  }
+   .overlay img{
+    width: 45px !important;
+  }
+}
+
+
+/* ============ mobile medium ====== */
+@media screen and (max-width: 400px){
+  .goat{
+    font-size: 60px;
+    text-align: center;
+  }
+  .all-button{
+    gap: 5px;
+  }
+  .video{
+    margin-bottom: 2rem;
+  }
+  .overlay{
+    height: 98.2%;
+  }
+  
+}
+
+@media screen and (max-width: 355px){
+  .instant-text p{
+    width: 100%;
+  }
+  .banner_btn_sm .signin_btn{
+    padding: 1rem 1rem;
+  }
+  .video{
+    margin-bottom: 2rem;
+  }
+   .overlay{
+    height: 98.2%;
+  }
 }
